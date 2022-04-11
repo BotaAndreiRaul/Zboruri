@@ -10,13 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Zboruri">
         <activity
-            android:name=".ZboruriActivity"
+            android:name=".Activities.AddFlightActivity"
             android:exported="false" />
         <activity
-            android:name=".LogInActivity"
+            android:name=".Activities.FlightViewActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.UserAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.UserViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.MeniuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.AdminLogInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.ZboruriActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.LogInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

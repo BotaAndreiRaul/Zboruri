@@ -4,11 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ZboruriActivity">
-
-    <ListView
-        android:id="@+id/UserListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    tools:context=".Activities.AddFlightActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

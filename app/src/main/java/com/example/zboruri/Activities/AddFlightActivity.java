@@ -1,17 +1,19 @@
-package com.example.zboruri;
+package com.example.zboruri.Activities;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ZboruriActivity extends AppCompatActivity {
+import com.example.zboruri.R;
+
+public class AddFlightActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_zboruri);
+        setContentView(R.layout.activity_add_flight);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Zboruri");
+        actionBar.setTitle("Add Flight");
     }
 }
