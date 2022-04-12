@@ -1,9 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.AddFlightActivity">
+    android:background="@drawable/plane"
+    tools:context=".Activities.AddFlightActivity"
+    android:orientation="vertical"
+    android:gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/startEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter start flight"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/destinationEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter destination"
+        android:inputType="text"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/priceEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter price"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/savebtn"
+        android:layout_width="73dp"
+        android:layout_height="48dp"
+        android:text="Save"
+        tools:layout_editor_absoluteX="250dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+</LinearLayout>

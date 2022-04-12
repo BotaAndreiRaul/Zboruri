@@ -60,6 +60,37 @@ public class UserDbHelper extends SQLiteOpenHelper {
         }
     }
 
+    public ArrayList<User> searchUser(String s1, String s2){
+        ArrayList<User> returnList = new ArrayList<>();
+
+        String query = "SELECT * FROM " + CUSTOMER_TABLE;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.moveToFirst()){
+            do{
+                int userID = cursor.getInt(0);
+                String customerEmail = cursor.getString(1);
+                String customerPass = cursor.getString(2);
+
+                if(customerEmail.equals(s1) && customerPass.equals(s2)){
+                    User user = new User(userID, customerEmail, customerPass);
+                    returnList.add(user);
+                }
+
+
+            }while (cursor.moveToNext());
+        }
+        else{
+            //failure do not do anything
+        }
+
+        // close both cursor and database
+        cursor.close();
+        db.close();
+        return  returnList;
+    }
+
     public ArrayList<User> getEveryone(){
         ArrayList<User> returnList = new ArrayList<>();
 
@@ -70,10 +101,10 @@ public class UserDbHelper extends SQLiteOpenHelper {
         if(cursor.moveToFirst()){
             do{
                 int userID = cursor.getInt(0);
-                String customerUserName = cursor.getString(1);
+                String customerEmail = cursor.getString(1);
                 String customerPass = cursor.getString(2);
 
-                User user = new User(userID, customerUserName, customerPass);
+                User user = new User(userID, customerEmail, customerPass);
                 returnList.add(user);
 
             }while (cursor.moveToNext());

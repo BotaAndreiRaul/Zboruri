@@ -37,7 +37,12 @@ public class UserAddActivity extends AppCompatActivity {
                     User user;
                     user = new User(-1, emailEt.getText().toString(), userPassEt.getText().toString());
                     boolean succes = userDbHelper.addOne(user);
-                    Toast.makeText(UserAddActivity.this, "Succes= " + succes, Toast.LENGTH_SHORT).show();
+                    if(succes){
+                        Toast.makeText(UserAddActivity.this, "User created succesfully", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(UserAddActivity.this, "Succes= " + succes, Toast.LENGTH_SHORT).show();
+                    }
                 }
 
             }

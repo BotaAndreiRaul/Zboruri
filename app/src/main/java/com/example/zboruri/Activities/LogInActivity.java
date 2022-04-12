@@ -10,6 +10,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.zboruri.R;
+import com.example.zboruri.Users.User;
+import com.example.zboruri.Users.UserDbHelper;
+
+import java.util.List;
 
 public class LogInActivity extends AppCompatActivity {
 
@@ -27,7 +31,9 @@ public class LogInActivity extends AppCompatActivity {
         logBtn.setOnClickListener(view -> {
             String email = emailText.getText().toString();
             String password = passwordText.getText().toString();
-            if(!email.contains("@") || !email.contains(".") || !email.equals("user1@gmail.com") || !password.equals("user1")){
+            UserDbHelper userDbHelper = new UserDbHelper(this);
+            List<User> userList = userDbHelper.searchUser(email, password);
+            if(!email.contains("@") || !email.contains(".") || userList.isEmpty()){
                 Toast toast = Toast.makeText(this, "Email-ul sau parola sunt gresite", Toast.LENGTH_SHORT);
                 toast.show();
             }
