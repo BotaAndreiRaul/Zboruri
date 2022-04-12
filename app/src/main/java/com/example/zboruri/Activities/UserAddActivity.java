@@ -3,6 +3,7 @@ package com.example.zboruri.Activities;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,6 +40,8 @@ public class UserAddActivity extends AppCompatActivity {
                     boolean succes = userDbHelper.addOne(user);
                     if(succes){
                         Toast.makeText(UserAddActivity.this, "User created succesfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(UserAddActivity.this, LogInActivity.class);
+                        startActivity(intent);
                     }
                     else{
                         Toast.makeText(UserAddActivity.this, "Succes= " + succes, Toast.LENGTH_SHORT).show();

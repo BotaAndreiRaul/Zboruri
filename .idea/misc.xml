@@ -9,12 +9,13 @@
         <entry key="..\:/Android_lab/Zboruri/app/src/main/res/layout/activity_add_flight.xml" value="0.25416666666666665" />
         <entry key="..\:/Android_lab/Zboruri/app/src/main/res/layout/activity_admin_log_in.xml" value="0.21240942028985507" />
         <entry key="..\:/Android_lab/Zboruri/app/src/main/res/layout/activity_flight_view.xml" value="0.21240942028985507" />
-        <entry key="..\:/Android_lab/Zboruri/app/src/main/res/layout/activity_log_in.xml" value="0.18931159420289856" />
+        <entry key="..\:/Android_lab/Zboruri/app/src/main/res/layout/activity_log_in.xml" value="0.4" />
         <entry key="..\:/Android_lab/Zboruri/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/Android_lab/Zboruri/app/src/main/res/layout/activity_meniu.xml" value="0.1" />
+        <entry key="..\:/Android_lab/Zboruri/app/src/main/res/layout/activity_meniu.xml" value="0.4" />
         <entry key="..\:/Android_lab/Zboruri/app/src/main/res/layout/activity_user_add.xml" value="0.1" />
         <entry key="..\:/Android_lab/Zboruri/app/src/main/res/layout/activity_user_view.xml" value="0.21240942028985507" />
         <entry key="..\:/Android_lab/Zboruri/app/src/main/res/layout/activity_zboruri.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android_lab/Zboruri/app/src/main/res/layout/tickets_number.xml" value="0.21240942028985507" />
       </map>
     </option>
   </component>

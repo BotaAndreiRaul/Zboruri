@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.zboruri.R;
@@ -27,6 +29,7 @@ public class LogInActivity extends AppCompatActivity {
         EditText emailText = findViewById(R.id.editEmail);
         EditText passwordText = findViewById(R.id.editPass);
         Button logBtn = findViewById(R.id.button2);
+        TextView register = findViewById(R.id.textView2);
 
         logBtn.setOnClickListener(view -> {
             String email = emailText.getText().toString();
@@ -41,6 +44,11 @@ public class LogInActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, ZboruriActivity.class);
                 startActivity(intent);
             }
+        });
+
+        register.setOnClickListener(view -> {
+            Intent intent = new Intent(LogInActivity.this, UserAddActivity.class);
+            startActivity(intent);
         });
     }
 }

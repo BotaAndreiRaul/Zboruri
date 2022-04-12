@@ -22,18 +22,9 @@ public class MeniuActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Meniu");
 
-        Button addUserBtn = findViewById(R.id.buttonAddUser);
         Button viewUserBtn = findViewById(R.id.buttonViewUser);
         Button addFlightBtn = findViewById(R.id.buttonAddFlight);
         Button viewFlightBtn = findViewById(R.id.buttonViewFlights);
-
-        addUserBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MeniuActivity.this, UserAddActivity.class);
-                startActivity(intent);
-            }
-        });
 
         viewUserBtn.setOnClickListener(view -> {
             Intent intent = new Intent(MeniuActivity.this, UserViewActivity.class);

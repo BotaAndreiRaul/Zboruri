@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.zboruri.Users.User;
+
 import java.util.ArrayList;
 
 public class FlightDbHelper extends SQLiteOpenHelper {
@@ -49,6 +51,23 @@ public class FlightDbHelper extends SQLiteOpenHelper {
         else{
             return true;
         }
+    }
+
+    public boolean deleteOne(Flight flight){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM " + FLIGHTS_TABLE + " WHERE " + ID + " = " + flight.getId();
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.moveToFirst()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public int getPrice(Flight flight){
+        int p = flight.getPrice();
+        return  p;
     }
 
     public ArrayList<Flight> getEveryone(){

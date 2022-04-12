@@ -1,8 +1,10 @@
 package com.example.zboruri.Activities;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,10 +35,24 @@ public class UserViewActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                User clickedUser = (User) parent.getItemAtPosition(position);
-                userDbHelper.deleteOne(clickedUser);
-                showCustomerOnListView(userDbHelper);
-                Toast.makeText(UserViewActivity.this, "Deleted the guy", Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder alert = new AlertDialog.Builder(UserViewActivity.this);
+                    alert.setMessage("Are you sure you want to delete this user?");
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        User clickedUser = (User) parent.getItemAtPosition(position);
+                        userDbHelper.deleteOne(clickedUser);
+                        showCustomerOnListView(userDbHelper);
+                        Toast.makeText(UserViewActivity.this, "Deleted User", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                alert.create().show();
             }
         });
     }

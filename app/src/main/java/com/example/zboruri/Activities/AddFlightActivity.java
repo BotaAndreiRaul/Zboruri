@@ -30,9 +30,13 @@ public class AddFlightActivity extends AppCompatActivity {
             FlightDbHelper flightDbHelper = new FlightDbHelper(AddFlightActivity.this);
             Flight flight;
             try {
-                flight = new Flight(-1, start.getText().toString(), destination.getText().toString(), Integer.parseInt(price.getText().toString()));
-                boolean succes = flightDbHelper.addOne(flight);
-                Toast.makeText(AddFlightActivity.this, "Flight added succesfully", Toast.LENGTH_SHORT).show();
+                if(start.getText().toString().isEmpty() || destination.getText().toString().isEmpty()){
+                    Toast.makeText(AddFlightActivity.this, "Error creating flight", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    flight = new Flight(-1, start.getText().toString(), destination.getText().toString(), Integer.parseInt(price.getText().toString()));
+                    flightDbHelper.addOne(flight);
+                }
             }
             catch (Exception e){
                 Toast.makeText(AddFlightActivity.this, "Error creating flight", Toast.LENGTH_SHORT).show();
