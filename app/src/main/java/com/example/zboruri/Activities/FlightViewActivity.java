@@ -29,6 +29,7 @@ public class FlightViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_flight_view);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("View Flight");
+
         listView = findViewById(R.id.FligtListView);
         FlightDbHelper flightDbHelper = new FlightDbHelper(FlightViewActivity.this);
         List<Flight> everyone = flightDbHelper.getEveryone();

@@ -21,18 +21,19 @@ import java.util.List;
 
 public class ZboruriActivity extends AppCompatActivity {
 
-    ListView listView;
+    private ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zboruri);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Flights");
+
         listView = findViewById(R.id.ZboruriListView);
         FlightDbHelper flightDbHelper = new FlightDbHelper(ZboruriActivity.this);
         List<Flight> everyone = flightDbHelper.getEveryone();
-        ArrayAdapter customerArrayAdapter = new ArrayAdapter<Flight>(ZboruriActivity.this, android.R.layout.simple_list_item_1, everyone);
-        listView.setAdapter(customerArrayAdapter);
+        ArrayAdapter flightArrayAdapter = new ArrayAdapter<Flight>(ZboruriActivity.this, android.R.layout.simple_list_item_1, everyone);
+        listView.setAdapter(flightArrayAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

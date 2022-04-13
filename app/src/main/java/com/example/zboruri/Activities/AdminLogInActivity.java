@@ -27,7 +27,6 @@ public class AdminLogInActivity extends AppCompatActivity {
         logBtn.setOnClickListener(view -> {
             String email = emailText.getText().toString();
             String password = passwordText.getText().toString();
-            System.out.println(email + " " + password );
             if(!email.contains("@") || !email.contains(".") || !email.equals("admin@gmail.com") || !password.equals("admin")){
                 Toast toast = Toast.makeText(this, "Email-ul sau parola sunt gresite", Toast.LENGTH_SHORT);
                 toast.show();

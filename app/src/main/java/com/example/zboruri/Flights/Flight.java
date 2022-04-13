@@ -22,7 +22,7 @@ public class Flight {
                 ", destinatie = " + destination +
                 ", pret = " + price +
                 " euro";*/
-        return start + " -> " + destination + '\t' + price + " euro";
+        return start + " -> " + destination + "    " + price + " euro";
     }
 
     public int getId() {

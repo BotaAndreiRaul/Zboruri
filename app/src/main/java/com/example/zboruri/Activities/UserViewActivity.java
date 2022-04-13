@@ -20,13 +20,14 @@ import java.util.List;
 
 public class UserViewActivity extends AppCompatActivity {
 
-    ListView listView;
+    private ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_view);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Users");
+
         listView = findViewById(R.id.UserListView);
         UserDbHelper userDbHelper = new UserDbHelper(UserViewActivity.this);
         List<User> everyone = userDbHelper.getEveryone();
